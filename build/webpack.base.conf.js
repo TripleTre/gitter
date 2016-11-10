@@ -2,6 +2,7 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
+var postCSSConfig = require('../config/postcss.conf')
 
 module.exports = {
   entry: {
@@ -68,6 +69,11 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test:   /\.css$/,
+        include: projectRoot,
+        loader: "style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&camelCase!postcss"
       }
     ]
   },
@@ -78,5 +84,8 @@ module.exports = {
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true,
     'react/addons': true
+  },
+  postcss: function () {
+      return postCSSConfig;
   }
 }

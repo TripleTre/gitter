@@ -1,4 +1,5 @@
 import React from 'react'
+import FileReader from './file-reader/file-reader.jsx'
 
 export default class HelloWorld extends React.Component {
 
@@ -8,7 +9,7 @@ export default class HelloWorld extends React.Component {
 
   render () {
     return (
-      <img src={this.getMessage()} />
+      <FileReader />
     )
   }
 }
