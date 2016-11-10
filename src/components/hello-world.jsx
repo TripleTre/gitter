@@ -1,9 +1,14 @@
 import React from 'react'
 
 export default class HelloWorld extends React.Component {
+
+  getMessage () {
+    return '<img src=""></img>'
+  }
+
   render () {
     return (
-      <div>hello world</div>
+      <img src={this.getMessage()} />
     )
   }
 }
