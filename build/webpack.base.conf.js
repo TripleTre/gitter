@@ -71,9 +71,9 @@ module.exports = {
         }
       },
       {
-        test:   /\.css$/,
+        test:   /\.less$/,
         include: projectRoot,
-        loader: "style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&camelCase!postcss"
+        loader: "style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&camelCase!less-loader"
       }
     ]
   },

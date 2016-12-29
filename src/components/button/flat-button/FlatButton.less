@@ -1,0 +1,32 @@
+@import '../../../less/global.less';
+@import '../../../less/flex.less';
+
+@primary-color: #428bca;
+
+.button {
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  .fullParent;
+  color: red;
+  padding: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: inherit;
+}
+
+.mask {
+  .justify-content(center);
+  .align-item(center);
+  .flex;
+  .fullParent;
+  z-index: 1;
+  border-radius: inherit;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+}

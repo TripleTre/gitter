@@ -1,8 +1,22 @@
 import React from 'react'
-import HelloWorld from 'components/hello-world'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import ReactDom from 'react-dom'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+import {Router, Route, browserHistory} from 'react-router'
+import App from './App'
+
+injectTapEventPlugin()
+
+const Routes = () => (
+  <Router history={browserHistory}>
+    <Route path="/" component={App}>
+    </Route>
+  </Router>
+)
 
 ReactDom.render(
-  React.createElement(HelloWorld),
+  <MuiThemeProvider>
+    <Routes />
+  </MuiThemeProvider>,
   document.getElementById('app')
 )
